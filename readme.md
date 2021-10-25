@@ -60,3 +60,5 @@ div{
 [输入框效果来源](https://www.bilibili.com/video/BV14D4y1Q74V)
 [扭曲的光圈](https://www.bilibili.com/video/BV11L4y1z71E)
 > 一个div元素 - 设置具体宽高, 给div元素加上两层光圈:写两个伪类, 加上动画:改变光圈颜色和大小, 再加上一层svg滤镜, 使其光圈扭曲
+> 如果想要一个光圈效果:设置box-shadow:0 0 10px 颜色,inset 0 0 10px 颜色;即可
+> 如果想要一个动态光圈效果:改变光圈大小(模糊半径)和改变颜色即可

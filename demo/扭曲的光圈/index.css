@@ -28,7 +28,8 @@ body{
   /* 动态光圈:改变颜色和光圈大小 */
   animation: animate 5s linear infinite;
 }
-.circle::after{
+/* 好像没必要写下面这个 */
+/* .circle::after{
   content: '';
   position: absolute;
   top: 100px;
@@ -39,7 +40,7 @@ body{
   border-radius: 50%;
   box-shadow: 0 0 50px #fff,0 0 50px #fff, inset;
 
-}
+} */
 .circle:nth-child(2)::before{
   animation-delay: -2.5s;
 }
