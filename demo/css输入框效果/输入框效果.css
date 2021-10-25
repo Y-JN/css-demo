@@ -1,3 +1,81 @@
 body{
-  background-color: pink;
+  /* 居中wrapper,不需要wrapper确定宽高 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  background-image: linear-gradient( 135deg, #79F1A4 10%, #0E5CAD 100%);
 }
+.wrapper{
+  width: 450px;
+  padding: 30px;
+
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+/* 包裹输入框的盒子 */
+.wrapper .input-data{
+  min-height: 40px;
+  width: 100%;
+  position: relative;
+}
+.input-data input{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid silver;
+  font-size: 17px;
+  line-height: 28px;
+  outline: none;
+  box-sizing: border-box;
+}
+.input-data label{
+  position: absolute;
+  bottom: 10px;
+  left: 0; 
+  color: gray;
+  pointer-events: none;
+  transition: all .3s;
+}
+.input-data input:valid ~ label,
+.input-data input:focus ~ label{
+  transform: translateY(-20px);
+  font-size: 15px;
+  color: #4158d0;
+}
+/* 底线 */
+.input-data .underline{
+  position: absolute;
+  bottom: 0px;
+  height: 2px;
+  width: 100%;
+  background: #4158d0;
+  transform: scaleX(0);
+  transition: all 0.3s;
+}
+.input-data input:valid ~ .underline,
+.input-data input:focus ~ .underline{
+  transform: scaleX(1);
+}
+/* 还有一个问题:文字的上下间距 */
+/* 输入框有一个效果:文字会自动垂直居中,文字的上下内边距就很难改掉
+所以就不要给他设置高度,让高度为文字大小,再通过设置行高来设置文字的上下内边距 */
+
+
+/* 没必要使用伪类 */
+/* .input-data .underline::before{
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: #4158d0;
+  transform: scaleX(0);
+} */
+/* 当点击文本框或文本框有文字时 */
+/* .input-data input:valid ~ .underline::before,
+.input-data input:focus ~ .underline::before{
+  transform: scaleX(1);
+} */
+
