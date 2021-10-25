@@ -35,7 +35,28 @@ css配色网站:
     height: 100vh;
     .wrapper{...}
   }
+  /*由于是flex,所以当父元素的区域缩放时,其子项的缩放优先于width/height */
 ```
 
 ****
+间距的写法 :
+- 使用margin
+- 使用padding
+- 格式化宽度,设置top/right/bottom/left
+- 其他
+```css
+/* 不仅格式化了div的宽高(让其100%),而且相当于设置了margin:100px */
+div{
+  position:absolute;
+  top: 100px;
+  right: 100px;
+  bottom: 100px;
+  left: 100px;
+}
+```
+
+
+****
 [输入框效果来源](https://www.bilibili.com/video/BV14D4y1Q74V)
+[扭曲的光圈](https://www.bilibili.com/video/BV11L4y1z71E)
+> 一个div元素 - 设置具体宽高, 给div元素加上两层光圈:写两个伪类, 加上动画:改变光圈颜色和大小, 再加上一层svg滤镜, 使其光圈扭曲

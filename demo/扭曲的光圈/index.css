@@ -1,0 +1,72 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000;
+}
+.circle{
+  position:relative;
+  width: 600px;
+  height: 600px;
+  /* 加上滤镜 */
+  filter: url(#wnvy) blur(1px);
+}
+.circle::before{
+  content: '';
+  position: absolute;
+  /* 格式化宽度:100%,但是离边界有100px */
+  top: 100px;
+  bottom: 100px;
+  left: 100px;
+  right: 100px;
+
+  border: 20px solid #fff;
+  border-radius: 50%;  
+  /* 有一种荧光的效果 */
+  box-shadow: 0 0 50px #0f0,0 0 50px #0f0 inset;
+  /* 动态光圈:改变颜色和光圈大小 */
+  animation: animate 5s linear infinite;
+}
+.circle::after{
+  content: '';
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  bottom: 100px;
+  left: 100px;
+  border: 20px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 50px #fff,0 0 50px #fff, inset;
+
+}
+.circle:nth-child(2)::before{
+  animation-delay: -2.5s;
+}
+@keyframes animate {
+  0%{
+    box-shadow: 0 0 50px #0f0,inset 0 0 50px #0f0;
+    filter: hue-rotate(0deg);
+  } 
+  20%{
+    box-shadow: 0 0 60px #0f0,inset 0 0 60px #0f0;
+  } 
+  40%{
+    box-shadow: 0 0 40px #0f0,inset 0 0 50px #0f0;
+  } 
+  60%{
+    box-shadow: 0 0 80px #0f0,inset 0 0 80px #0f0;
+  } 
+  80%{
+    box-shadow: 0 0 100px #0f0,inset 0 0 100px #0f0;
+  } 
+  100%{
+    box-shadow: 0 0 50px #0f0,inset 0 0 50px #0f0;
+    filter: hue-rotate(360deg);
+  } 
+
+}
+svg{
+  width: 0;
+  height: 0;
+}
